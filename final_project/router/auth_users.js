@@ -66,12 +66,12 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
       // Modify the existing review
       books[isbn].reviews[username] = reviewText;
       // Send a success response indicating the review was updated
-      return res.status(200).json({ message: `The review for the book with ISBN ${isbn} has been updated` });
+      return res.status(200).json({ message: 'The review for the book with ISBN ${isbn} has been updated/added' });
     } else {
       // Add a new review for the user under the specified ISBN
       books[isbn].reviews[username] = reviewText;
       // Send a success response indicating the review was added
-      return res.status(200).json({ message: `The review for the book with ISBN ${isbn} has been added` });
+      return res.status(200).json({ message: 'The review for the book with ISBN ${isbn} has been added' });
     }
   } else {
     // Book with the specified ISBN not found

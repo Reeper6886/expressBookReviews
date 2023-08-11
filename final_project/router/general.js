@@ -102,7 +102,7 @@ public_users.get('/author/:author',function (req, res) {
         // Check if any books were found for the provided author
         if (booksByAuthor.length > 0) {
             // Send the book details as the response
-            return res.status(200).json(booksByAuthor);
+            return res.status(200).json({ booksbyauthor: booksByAuthor });  
         } else {
             // No books found for the specified author
             return res.status(404).json({ message: "No books found for the author" });
@@ -145,7 +145,7 @@ public_users.get('/title/:title',function (req, res) {
         // Check if any books were found for the provided author
         if (booksByTitle.length > 0) {
             // Send the book details as the response
-            return res.status(200).json(booksByTitle);
+            return res.status(200).json({ booksbytitle: booksByTitle });
         } else {
             // No books found for the specified author
             return res.status(404).json({ message: "No books found for the author" });
